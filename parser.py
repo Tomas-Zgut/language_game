@@ -3,11 +3,9 @@ import sys
 
 
 def load_lines():
-    out_lst = []
-    for line in sys.stdin:
-        if 'Exit' == line.rstrip():
-            break
-        out_lst.append(line)
+   with open('new') as inptf:
+    out = inptf.read()
+    out_lst = out.splitlines()
     return out_lst
 
 def transfrom_data(data):
@@ -31,7 +29,7 @@ def update_json_file(updatedJsonString):
         if oldJsonString == '':
             newJsonString = updatedJsonString
         else :
-            newJsonString = f"{oldJsonString[:-2]},\n{updatedJsonString[3:]}"
+            newJsonString = f"{oldJsonString[:-2]},\n {updatedJsonString[3:]}"
 
         with open("cards.JSON","w") as f_new:
             f_new.write(newJsonString)
