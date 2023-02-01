@@ -29,9 +29,9 @@ def update_json_file(updatedJsonString):
         if oldJsonString == '':
             newJsonString = updatedJsonString
         else :
-            newJsonString = f"{oldJsonString[:-2]},\n {updatedJsonString[3:]}"
+            newJsonString = f'{oldJsonString[:-2]},\n {updatedJsonString[3:]}'
 
-        with open("cards.JSON","w") as f_new:
+        with open('cards.JSON','w') as f_new:
             f_new.write(newJsonString)
 
 def main():
