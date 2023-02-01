@@ -14,7 +14,7 @@ function randomizeArr(array) {
     return array;
 }
 
-
+//funkcia na paplnenie pomocneho pola
 function filArr(array) {
     for (let i = 0; i < cardsData.length; i++) {
         array[i] = i;
@@ -55,7 +55,7 @@ function nextCard() {
 
 }
 
-
+//funkcia na skontrolovanie sprvnosti odpovede
 function checkAnswr() {
     if (answerIn.value != cardsData[arr[idx]].answer) {
         livesCnt --;
@@ -78,7 +78,7 @@ function checkAnswr() {
 
 }
 
-
+//funkcia, ktora sa spusti po ukonceni hry
 function endGame() {
     console.log(points);
     answerBtn.disabled = true;
@@ -102,7 +102,7 @@ function resetGame() {
     nextCard();
 }
 
-
+//deklaracia potrebnych globalnych premennych
 let idx;
 let points;
 let clueCnt;
@@ -110,6 +110,7 @@ let livesCnt;
 
 let arr = []; //'arr' je pole indexov kariet v 'cards_data'; pri nahodnom prehadzovani sa kopiroju len indexy a nie cele objekty
 
+//html bs
 const clueBtn = document.getElementById("newClue");
 const nextBtn = document.getElementById("nextCard");
 const answerBtn = document.getElementById("sendAnswer");
@@ -126,11 +127,6 @@ answerBtn.addEventListener("click",checkAnswr);
 filArr(arr);
 resetGame();
 
-
-// for (let j = 0; j < 5; j ++) {
-//     showClue(cardsData[arr[idx]],j);
-// }
-    //nextCard();
 
 
 
