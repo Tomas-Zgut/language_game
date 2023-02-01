@@ -59,7 +59,7 @@ function nextCard() {
 function checkAnswr() {
     if (answerIn.value != cardsData[arr[idx]].answer) {
         livesCnt --;
-        livecnter.innerHTML = livesCnt;
+        liveCnter.innerHTML = livesCnt;
         if (livesCnt == 0) {
             endGame();
         }
@@ -68,8 +68,12 @@ function checkAnswr() {
 
     let cardPoints = clueCnt + 1;
     points += cardPoints;
-    console.log(points);
-    nextBtn.disabled = false;
+    pointCnter.innerHTML = points;
+
+    if (idx + 1 < cardsData.length) {
+        nextBtn.disabled = false;
+    }
+
 
 
 }
@@ -92,7 +96,8 @@ function resetGame() {
 
     nextBtn.disabled = true;
     answerBtn.disabled = false;
-    livecnter.innerHTML = livesCnt;
+    liveCnter.innerHTML = livesCnt;
+    pointCnter.innerHTML = points;
     randomizeArr(arr);
     nextCard();
 }
@@ -110,7 +115,8 @@ const nextBtn = document.getElementById("nextCard");
 const answerBtn = document.getElementById("sendAnswer");
 const clueSpace = document.getElementById("Clues");
 const answerIn = document.getElementById("answerInput");
-const livecnter = document.getElementById("liveCounter");
+const liveCnter = document.getElementById("liveCounter");
+const pointCnter = document.getElementById("scoreCounter");
 
 clueBtn.addEventListener("click",showClue);
 nextBtn.addEventListener("click",nextCard);
