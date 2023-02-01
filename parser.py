@@ -33,6 +33,9 @@ def update_json_file(updatedJsonString):
 
         with open('cards.JSON','w') as f_new:
             f_new.write(newJsonString)
+def clear_input():
+    with open('new','w') as inpf:
+        inpf.write('')
 
 def main():
     lines = load_lines()
@@ -41,6 +44,8 @@ def main():
     addedJsonString = json.dumps(data_dct,indent=4)
 
     update_json_file(addedJsonString)
+
+    clear_input()
 
 
 if __name__ == '__main__':
