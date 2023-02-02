@@ -1,9 +1,8 @@
 import json
-import sys
 
 
 def load_lines():
-   with open('new') as inptf:
+   with open('new.txt') as inptf:
     out = inptf.read()
     out_lst = out.splitlines()
     return out_lst
