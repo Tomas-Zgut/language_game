@@ -2,14 +2,13 @@ import json
 
 
 def load_lines():
-   with open('new.txt') as inptf:
+   with open('new.txt',encoding="UTF-8") as inptf:
     out = inptf.read()
     out_lst = out.splitlines()
     return out_lst
 
 def transfrom_data(data):
     out_lst = []
-    print(data)
     for line in data:
         line = line.split(',')
         line_dct = {
