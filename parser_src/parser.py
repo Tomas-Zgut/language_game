@@ -9,6 +9,7 @@ def load_lines():
 
 def transfrom_data(data):
     out_lst = []
+    print(data)
     for line in data:
         line = line.split(',')
         line_dct = {
@@ -22,7 +23,7 @@ def transfrom_data(data):
     return out_lst
 
 def update_json_file(updatedJsonString):
-        with open('cards.JSON','r') as f_old:
+        with open('page_src/js/cards.JSON','r') as f_old:
             oldJsonString = f_old.read()
 
         if oldJsonString == '':
@@ -30,15 +31,19 @@ def update_json_file(updatedJsonString):
         else :
             newJsonString = f'{oldJsonString[:-2]},\n {updatedJsonString[3:]}'
 
-        with open('cards.JSON','w') as f_new:
+        with open('page_src/js/cards.JSON','w') as f_new:
             f_new.write(newJsonString)
 def clear_input():
-    with open('new','w') as inpf:
+    with open('new.txt','w') as inpf:
         inpf.write('')
 
 def main():
     lines = load_lines()
 
+    if lines == []:
+        print('Use the "new" file!')
+        return
+        
     data_dct = transfrom_data(lines)
     addedJsonString = json.dumps(data_dct,indent=4)
 
