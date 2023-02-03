@@ -1,46 +1,112 @@
 [
     {
         "clues": [
-            "korouber",
+            "necky",
+            "Erben",
             "kulajda",
-            "Erben",
             "Karel IV.",
-            "Krkonose"
+            "Krkono\u0161e"
         ],
-        "answer": "cestina",
-        "translate": "standarda"
+        "answer": "\u010desk\u00fd",
+        "translate": "koryto"
     },
     {
         "clues": [
-            "korouber",
-            "kulajda2",
-            "Erben",
-            "Karel IV.",
-            "Krkonose"
+            "but",
+            "\u017eurek",
+            "Jagiello",
+            "Sienkiewicz",
+            "Mazury"
         ],
-        "answer": "cestina",
-        "translate": "standarda"
+        "answer": "po\u013esk\u00fd",
+        "translate": "top\u00e1nka"
     },
     {
         "clues": [
-            "korouber",
-            "kulajda3",
-            "Erben",
-            "Karel IV.",
-            "Krkonose"
+            "kind",
+            "sp\u00e4tzle",
+            "Grimm",
+            "Luther",
+            "Bayern"
         ],
-        "answer": "cestina",
-        "translate": "standarda"
+        "answer": "nemeck\u00fd",
+        "translate": "die\u0165a"
     },
     {
         "clues": [
-            "korouber",
-            "kulajda",
-            "Erben",
-            "Karel IV.",
-            "Krkonose"
+            "plot",
+            "Wassail",
+            "Whight",
+            "Bront\u00eb",
+            "Tudor"
         ],
-        "answer": "cestina",
-        "translate": "standarda"
+        "answer": "anglick\u00fd",
+        "translate": "z\u00e1pletka"
+    },
+    {
+        "clues": [
+            "pain",
+            "Racine",
+            "Vosges",
+            "coq qu vin",
+            "Charlemagne"
+        ],
+        "answer": "franc\u00fazsky",
+        "translate": "chlieb"
+    },
+    {
+        "clues": [
+            "iki",
+            "Kun\u010dinas",
+            "\u0161altibar\u0161\u010diai",
+            "Vytautas",
+            "Nemunas"
+        ],
+        "answer": "litovsk\u00fd",
+        "translate": "k\u00fdm"
+    },
+    {
+        "clues": [
+            "bank",
+            "Tasman",
+            "Mulish",
+            "Maas",
+            "gouda"
+        ],
+        "answer": "holandsk\u00fd",
+        "translate": "ka\u0161e\u013e"
+    },
+    {
+        "clues": [
+            "cuore",
+            "ossobuco",
+            "Eco",
+            "Garibaldi",
+            "Piemont"
+        ],
+        "answer": "taliansky",
+        "translate": "srdce"
+    },
+    {
+        "clues": [
+            "rana",
+            "Ebro",
+            "Cervantes",
+            "gazpacho",
+            "Isabella II."
+        ],
+        "answer": "\u0161panielsky",
+        "translate": "\u017eaba"
+    },
+    {
+        "clues": [
+            "rum",
+            "lutfisk",
+            "Lindgren",
+            "Magnusson",
+            "Gotland"
+        ],
+        "answer": "\u0161v\u00e9dsky",
+        "translate": "izba"
     }
 ]

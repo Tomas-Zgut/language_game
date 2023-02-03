@@ -46,6 +46,7 @@ function nextCard() {
     clueCnt = 5;
 
     clueBtn.disabled = false;
+    answerBtn.disabled = false;
     nextBtn.disabled = true;
     clueSpace.innerHTML = "";
     answerIn.value  = "";
@@ -69,6 +70,8 @@ function checkAnswr() {
     let cardPoints = clueCnt + 1;
     points += cardPoints;
     pointCnter.innerHTML = points;
+    answerBtn.disabled = true;
+    clueBtn.disabled = true;
 
     if (idx + 1 < cardsData.length) {
         nextBtn.disabled = false;
