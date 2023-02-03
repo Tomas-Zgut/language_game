@@ -12,7 +12,7 @@ function randomizeArr(array) {
         
     }
     return array;
-}
+}   
 
 //funkcia na paplnenie pomocneho pola
 function filArr(array) {
@@ -81,7 +81,7 @@ function checkAnswr() {
 //funkcia, ktora sa spusti po ukonceni hry
 function endGame() {
     console.log(points);
-    answerBtn.disabled = true;
+    //answerBtn.disabled = true;
     console.log("fuck");
     resetGame();
 }
@@ -102,7 +102,7 @@ function resetGame() {
     nextCard();
 }
 
-//deklaracia potrebnych globalnych premennych
+
 let idx;
 let points;
 let clueCnt;
@@ -110,7 +110,7 @@ let livesCnt;
 
 let arr = []; //'arr' je pole indexov kariet v 'cards_data'; pri nahodnom prehadzovani sa kopiroju len indexy a nie cele objekty
 
-//html bs
+
 const clueBtn = document.getElementById("newClue");
 const nextBtn = document.getElementById("nextCard");
 const answerBtn = document.getElementById("sendAnswer");
