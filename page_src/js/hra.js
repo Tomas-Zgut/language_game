@@ -30,7 +30,7 @@ function showClue() {
         clueBtn.disabled = true;
     }
 
-    clueSpace.innerHTML += `<li>${cardsData[arr[idx]].clues[5 - clueCnt]}</li>`;
+    clueSpace.innerHTML += `<li> ${cardsData[arr[idx]].clues[5 - clueCnt]} </li>`;
     clueCnt --;
 
 }
@@ -60,15 +60,15 @@ function nextCard() {
 function checkAnswr() {
     if (answerIn.value != cardsData[arr[idx]].answer) {
         livesCnt --;
-        liveCnter.innerHTML = livesCnt;
+        liveCnter.innerHTML = `${heartEmoji}${livesCnt}`;
         if (livesCnt == 0) {
             endGame();
         }
         return;
     }
 
-    let cardPoints = clueCnt + 1;
-    points += cardPoints;
+    points += clueCnt + 1;
+    
     pointCnter.innerHTML = points;
     answerBtn.disabled = true;
     clueBtn.disabled = true;
@@ -76,17 +76,21 @@ function checkAnswr() {
     if (idx + 1 < cardsData.length) {
         nextBtn.disabled = false;
     }
+}
 
 
-
+//funkcia na detekciu stlacenia enteru v input poli,vola checkAnswr()
+function checkAnswrWrapper(event) {
+    if (event.code == "Enter" || event.code == "NumpadEnter") {
+        checkAnswr();
+    }
 }
 
 //funkcia, ktora sa spusti po ukonceni hry
 function endGame() {
-    console.log(points);
-    //answerBtn.disabled = true;
-    console.log("fuck");
-    resetGame();
+    answerBtn.disabled = true;
+    console.log(`gg ${points}`);
+    //resetGame();
 }
 
 
@@ -99,12 +103,13 @@ function resetGame() {
 
     nextBtn.disabled = true;
     answerBtn.disabled = false;
-    liveCnter.innerHTML = livesCnt;
+
+    liveCnter.innerHTML = `${heartEmoji}${livesCnt}`;
     pointCnter.innerHTML = points;
+
     randomizeArr(arr);
     nextCard();
 }
-
 
 let idx;
 let points;
@@ -112,8 +117,9 @@ let clueCnt;
 let livesCnt;
 
 let arr = []; //'arr' je pole indexov kariet v 'cards_data'; pri nahodnom prehadzovani sa kopiroju len indexy a nie cele objekty
+const heartEmoji = "❤️";
 
-
+//tu su najdene vsetky html elementy s ktorymi tento kod pracuje
 const clueBtn = document.getElementById("newClue");
 const nextBtn = document.getElementById("nextCard");
 const answerBtn = document.getElementById("sendAnswer");
@@ -125,6 +131,7 @@ const pointCnter = document.getElementById("scoreCounter");
 clueBtn.addEventListener("click",showClue);
 nextBtn.addEventListener("click",nextCard);
 answerBtn.addEventListener("click",checkAnswr);
+answerIn.addEventListener("keydown",checkAnswrWrapper);
 
 //zaciatok hry
 filArr(arr);
