@@ -5,7 +5,7 @@ hehe
 
 
 
-
+TODO: UPDATE THIS THING!
 \\Pouzitie parseru\\
 do suboru "new" nakopirujes nove data pre hru v formate:
     napoveda1,...,napoveda5,odpoved,preklad_napovedy
