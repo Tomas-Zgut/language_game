@@ -1,0 +1,8 @@
+ul{
+    background-color: red;
+    text-decoration: none;
+    margin-left: 50px;
+    padding: 10;
+    float: left;
+    list-style-type: none;
+}
