@@ -1,6 +1,7 @@
 Vitaj,
 toto je jazykova hra pri ktorej si otestujes svoje jazykove znalosti.
 
+hehe
 
 
 
