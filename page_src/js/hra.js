@@ -30,7 +30,7 @@ function showClue() {
         clueBtn.disabled = true;
     }
 
-    clueSpace.innerHTML += `<br>${cardsData[arr[idx]].clues[5 - clueCnt]}`;
+    clueSpace.innerHTML += `<li>${cardsData[arr[idx]].clues[5 - clueCnt]}</li>`;
     clueCnt --;
 
 }
