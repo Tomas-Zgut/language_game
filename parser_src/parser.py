@@ -1,5 +1,6 @@
 import json
 import argparse
+import sys
 
 def parse_aguments():
     ap = argparse.ArgumentParser()
@@ -16,23 +17,31 @@ def parse_aguments():
     return ap.parse_args()
 
 def load_lines(input_file):
-    with open(input_file,encoding="UTF-8") as inptf:
-        out = inptf.read()
-        out_lst = out.splitlines()
-        return out_lst
+    try:
+        with open(input_file,encoding="UTF-8") as inptf:
+            out = inptf.read()
+    except FileNotFoundError:
+        print(f'file "{input_file}" not found!')
+        sys.exit()
+    
+    out_lst = out.splitlines()
+    return out_lst
 
 def transfrom_data(data,delimiter):
     out_lst = []
     for line in data:
         line = line.split(delimiter)
-        print(line)
+        try:
+            line_dct = {
+                'clues': line[:5],
+                'answer': line[5].rstrip('\n')
+            }   
 
-        line_dct = {
-            'clues': line[:5],
-            'answer': line[5].rstrip('\n')
-        }
-
-        out_lst.append(line_dct)
+            out_lst.append(line_dct)
+            
+        except IndexError:
+            print('Invalid input format!')
+            sys.exit()
 
     return out_lst
 
@@ -60,7 +69,7 @@ def main():
 
     if lines == []:
         print('The input file is empty!')
-        return
+        sys.exit()
         
     data_dct = transfrom_data(lines,agrs.delimiter)
     addedJsonString = json.dumps(data_dct,indent=4)
