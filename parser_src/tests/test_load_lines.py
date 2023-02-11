@@ -4,10 +4,10 @@ from adder import load_lines
 class TestLoadingFileData(unittest.TestCase):
     
     def test_nonexistent_file(self):
-        with self.assertRaises(SystemExit) as fc:
+        """TEST nonexistent file supplied"""
+        with self.assertRaises(SystemExit) as ec:
             load_lines("nn.txt")
-        self.assertEqual(fc.exception.code,1)
-
+        self.assertEqual(ec.exception.code,1,"Should have exiteed with code 1")
 
 
 
