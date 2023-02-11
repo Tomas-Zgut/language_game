@@ -41,7 +41,7 @@ def transfrom_data(data,delimiter):
             
         except IndexError:
             print('Invalid input format!')
-            sys.exit()
+            sys.exit(1)
 
     return out_lst
 
@@ -69,7 +69,7 @@ def main():
 
     if lines == []:
         print('The input file is empty!')
-        sys.exit()
+        sys.exit(1)
         
     data_dct = transfrom_data(lines,agrs.delimiter)
     addedJsonString = json.dumps(data_dct,indent=4)
