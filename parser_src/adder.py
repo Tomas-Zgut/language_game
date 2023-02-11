@@ -22,7 +22,7 @@ def load_lines(input_file):
             out = inptf.read()
     except FileNotFoundError:
         print(f'file "{input_file}" not found!')
-        sys.exit()
+        sys.exit(1)
     
     out_lst = out.splitlines()
     return out_lst
