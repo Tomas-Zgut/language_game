@@ -8,7 +8,8 @@ class TestLoadingFileData(unittest.TestCase):
         with self.assertRaises(SystemExit) as ec:
             load_lines("nn.txt")
         self.assertEqual(ec.exception.code,1,"Should have exiteed with code 1")
-
+    
+        
 
 
 if __name__ == "__main__":
