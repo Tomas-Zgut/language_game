@@ -5,7 +5,7 @@ import sys
 def parse_aguments():
     ap = argparse.ArgumentParser()
 
-    default_inpf = 'new.txt'
+    default_inpf = 0
     default_delim = ','
 
     ap.add_argument('-i','--inpfilename', default = default_inpf,
@@ -18,13 +18,16 @@ def parse_aguments():
 
 def load_lines(input_file):
     try:
-        with open(input_file,encoding="UTF-8") as inptf:
+        with open(input_file) as inptf:
             out = inptf.read()
-    except FileNotFoundError:
-        print(f'file "{input_file}" not found!')
+    except IOError as err:
+        print("File not found!")
         sys.exit(1)
     
     out_lst = out.splitlines()
+    if len(out_lst) == 0:
+        print('The file is empty!')
+        sys.exit(1)
     return out_lst
 
 def transfrom_data(data,delimiter):
@@ -66,10 +69,6 @@ def main():
     agrs = parse_aguments()
 
     lines = load_lines(agrs.inpfilename)
-
-    if lines == []:
-        print('The input file is empty!')
-        sys.exit(1)
         
     data_dct = transfrom_data(lines,agrs.delimiter)
     addedJsonString = json.dumps(data_dct,indent=4)
