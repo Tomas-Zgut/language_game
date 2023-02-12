@@ -5,7 +5,7 @@ import sys
 def parse_aguments():
     ap = argparse.ArgumentParser()
 
-    default_inpf = 0
+    default_inpf = 'new.txt'
     default_delim = ','
 
     ap.add_argument('-i','--inpfilename', default = default_inpf,
