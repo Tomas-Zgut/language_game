@@ -1,3 +1,4 @@
+//source: answer by Dave Burton@stackoverflow https://stackoverflow.com/questions/36921947/read-a-server-side-file-using-javascript
 function loadFile(filePath) {
     let result = null;
     const xmlhttp = new XMLHttpRequest();
