@@ -1,4 +1,4 @@
-async function loadFile(filePath) {
+function loadFile(filePath) {
     let result = null;
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", filePath, false);
@@ -127,7 +127,7 @@ let livesCnt;
 
 let arr = []; //'arr' je pole indexov kariet v 'cards_data'; pri nahodnom prehadzovani sa kopiroju len indexy a nie cele objekty
 const heartEmoji = "❤️";
-let data = await loadFile("page_src/js/cards.JSON");
+let data = loadFile("page_src/js/cards.JSON");
 const cardsData = JSON.parse(data);
 
 //tu su najdene vsetky html elementy s ktorymi tento kod pracuje
