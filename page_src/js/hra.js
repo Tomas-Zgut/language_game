@@ -1,4 +1,13 @@
-import cardsData from "./cards.JSON" assert {type: "json"};
+async function loadFile(filePath) {
+    let result = null;
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", filePath, false);
+    xmlhttp.send();
+    if (xmlhttp.status==200) {
+      result = xmlhttp.responseText;
+    }
+    return result;
+  }
 
 //Funkcia na nahodne poprehadzovanie poloziek v 'array'. 
 function randomizeArr(array) {
@@ -118,6 +127,8 @@ let livesCnt;
 
 let arr = []; //'arr' je pole indexov kariet v 'cards_data'; pri nahodnom prehadzovani sa kopiroju len indexy a nie cele objekty
 const heartEmoji = "❤️";
+let data = await loadFile("page_src/js/cards.JSON");
+const cardsData = JSON.parse(data);
 
 //tu su najdene vsetky html elementy s ktorymi tento kod pracuje
 const clueBtn = document.getElementById("newClue");
